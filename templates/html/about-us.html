@@ -1,0 +1,538 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Property Finance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/about-us-style.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <section class="hero-section">
+        <div class="overlay"></div>
+        <!-- Hamburger Button - Visible Only on Mobile -->
+        <button class="sidebar-toggle-btn navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Desktop Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+            <div class="container glass">
+                <a class="navbar-brand" href="#">
+                    <img src="https://cdn.prod.website-files.com/6736760549abb9514e976ad5/673ed8e4ea869941b69f77e1_logo1-07%20(1)%20(1)-p-2000.png"
+                        alt="MARRFA" height="40" />
+                </a>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home/">
+                                <i class="fas fa-home"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/projects/">
+                                <i class="fas fa-solid fa-building"></i> Projects
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/search-properties/">
+                                <i class="fas fa-search"></i> Search Property
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/finance/">
+                                <i class="fas fa-chart-line"></i> Finance
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/about-us/">
+                                <i class="fas fa-info-circle"></i> About Us
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blogs/">
+                                <i class="fas fa-blog"></i> Blogs
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <button class="callback-btn"><span>Request Callback</span></button>
+            </div>
+        </nav>
+
+        <!-- Sidebar (Only on Mobile) -->
+        <div class="mobile-sidebar" id="mobileSidebar">
+            <div class="sidebar-header">
+                <span class="close-btn" onclick="closeSidebar()">×</span>
+            </div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/home/">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/projects/">
+                        <i class="fas fa-solid fa-building"></i> Projects
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/search-properties/">
+                        <i class="fas fa-search"></i> Search Property
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/finance/">
+                        <i class="fas fa-chart-line"></i> Finance
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about-us/">
+                        <i class="fas fa-info-circle"></i> About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/blogs/">
+                        <i class="fas fa-blog"></i> Blogs
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <nav class="main-navbar">
+            <a class="active" href="#">
+                Company
+            </a>
+            <a href="#">
+                History
+            </a>
+            <a href="#">
+                Our Values
+            </a>
+            <a href="#">
+                Our Team
+            </a>
+            <a href="#">
+                Reviews
+            </a>
+            <a href="#">
+                Contact Us
+            </a>
+        </nav>
+        <section class="company-about-us">
+            <div class="company-grid">
+                <div>
+                    <h1 class="company-title">
+                        Company
+                    </h1>
+                    <p class="company-text">
+                        Marrfá was founded with a singular vision: to democratize access to global real estate
+                        investments. In a world where technology has opened up so many opportunities, the freedom to
+                        invest in properties across borders remains limited. Many investors face a fragmented and opaque
+                        real estate market, with challenges such as lack of transparency, complex processes, and
+                        insufficient data to make informed decisions. Our mission is to break down these barriers and
+                        provide investors with the last freedom—the freedom to invest confidently in real estate
+                        anywhere in the world.
+                    </p>
+                    <p class="company-text">
+                        For many, the journey to finding the right investment property is daunting. Traditional methods
+                        involve dealing with countless agents, navigating through unclear regulations, and facing a lack
+                        of reliable information. This cumbersome process often leaves investors feeling overwhelmed and
+                        uncertain. Marrfá is here to change that.
+                    </p>
+                </div>
+                <div class="company-image-container">
+                    <img alt="A panoramic view of a modern city with skyscrapers and a clear blue sky"
+                        class="company-image" src="https://placehold.co/400x300" />
+                </div>
+            </div>
+            <div class="company-grid mt-5">
+                <div class="company-image-container">
+                    <img alt="A coastal city with modern buildings and a beautiful shoreline" class="company-image"
+                        src="https://placehold.co/400x300" />
+                </div>
+                <div>
+                    <h1 class="company-title">
+                        What makes Marrfá different
+                    </h1>
+                    <p class="company-text">
+                        At Marrfá, we believe that everyone should have access to clear, transparent information when it
+                        comes to investing in real estate. The real estate market has long been dominated by gatekeepers
+                        who limit access to information and opportunities. This has created a significant gap in the
+                        market, especially for those looking to invest across borders.
+                    </p>
+                    <p class="company-text">
+                        In today's interconnected world, people have more freedom than ever to work remotely, travel,
+                        and live in different parts of the globe. Yet, when it comes to investing in properties, many
+                        still feel confined by outdated systems and processes. Real estate is not just about buying a
+                        property; it's about investing in a future, choosing a community, and creating value. Marrfá
+                        exists to make this process straightforward, accessible, and fair for everyone.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="core-feature-about-us">
+            <h1>How Marrfa Helps Clients</h1>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-search"></i>
+                    <h2>Streamlined Discovery</h2>
+                    <p>Whether you are looking for properties in Europe or commercial investments in Asia, we provide a
+                        wide range of international real estate opportunities and an extensive inventory to suit your
+                        investment goals.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-chart-line"></i>
+                    <h2>Data-Driven Insights</h2>
+                    <p>We equip investors with the latest market data, including historical price trends, rental yields,
+                        and capital appreciation forecasts. This information enables our clients to make well-informed
+                        decisions based on clear, factual insights.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h2>Seamless Investment Process</h2>
+                    <p>Whether you are looking for properties in Europe or commercial investments in Asia, we provide a
+                        wide range of international real estate opportunities and an extensive inventory to suit your
+                        investment goals.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-language"></i>
+                    <h2>Multilingual Support</h2>
+                    <p>To cater to a global clientele, Marrfa provides support in multiple languages, including English,
+                        Arabic, and Persian. This ensures that all users have a smooth and accessible experience,
+                        regardless of their location or language.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="history-container">
+            <h1 class="history-title">History</h1>
+            <div class="history-timeline">
+                <div class="history-event">
+                    <div class="history-event-left">
+                        <p class="history-event-date">Dec '24</p>
+                    </div>
+                    <div class="history-event-marker"></div>
+                    <div class="history-event-right">
+                        <h2 class="history-event-title">Platform Launch</h2>
+                        <p class="history-event-description">Marrfa launched its online platform, offering a data-driven
+                            approach to discovering and comparing real estate properties.</p>
+                    </div>
+                </div>
+                <div class="history-event">
+                    <div class="history-event-left">
+                        <p class="history-event-date">Apr '24</p>
+                    </div>
+                    <div class="history-event-marker"></div>
+                    <div class="history-event-right">
+                        <h2 class="history-event-title">Partnership and Growth</h2>
+                        <p class="history-event-description">Marrfa formed strategic partnerships with key real estate
+                            developers and expanded its offerings to include exclusive investment opportunities and
+                            enhanced market insights.</p>
+                    </div>
+                </div>
+                <div class="history-event">
+                    <div class="history-event-left">
+                        <p class="history-event-date">Jan '24</p>
+                    </div>
+                    <div class="history-event-marker"></div>
+                    <div class="history-event-right">
+                        <h2 class="history-event-title">Foundation Stone</h2>
+                        <p class="history-event-description">Marrfa was established to address the challenges in
+                            cross-border real estate investments, focusing on creating a more transparent and
+                            streamlined process for investors worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="value-about-us-container">
+            <h1 class="value-about-us-title">Our Values</h1>
+            <div class="value-about-us-grid">
+                <div class="value-about-us-item">
+                    <div class="value-about-us-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="value-about-us-content">
+                        <h2>Transparency</h2>
+                        <p>We provide clear, data-driven insights to help investors make informed decisions with full
+                            visibility into their investments.</p>
+                    </div>
+                </div>
+                <div class="value-about-us-item">
+                    <div class="value-about-us-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="value-about-us-content">
+                        <h2>Innovation</h2>
+                        <p>We continuously enhance our platform with the latest technology and tools to offer the best
+                            user experience and investment options.</p>
+                    </div>
+                </div>
+                <div class="value-about-us-item">
+                    <div class="value-about-us-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="value-about-us-content">
+                        <h2>Customer Success</h2>
+                        <p>We prioritize our clients' success by offering personalized support and guidance throughout
+                            their investment journey.</p>
+                    </div>
+                </div>
+                <div class="value-about-us-item">
+                    <div class="value-about-us-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="value-about-us-content">
+                        <h2>Integrity</h2>
+                        <p>We operate with honesty and fairness, ensuring that all information and transactions are
+                            straightforward and trustworthy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="our-team-container">
+            <h1 class="our-team-title">
+                Our Team
+            </h1>
+            <h2 class="our-team-subtitle">
+                Executives
+            </h2>
+            <div class="our-team-grid">
+                <div class="our-team-member">
+                    <img alt="Portrait of Jamil Ahmad"
+                        src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=128&w=128" />
+                    <h3>
+                        Jamil Ahmad
+                    </h3>
+                    <p>
+                        Founder &amp; CEO
+                    </p>
+                </div>
+                <div class="our-team-member">
+                    <img alt="Portrait of Mallika Boobna"
+                        src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=128&w=128" />
+                    <h3>
+                        Mallika Boobna
+                    </h3>
+                    <p>
+                        Director- Singapore
+                    </p>
+                </div>
+                <div class="our-team-member">
+                    <img alt="Portrait of Artem Gede"
+                        src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=128&w=128" />
+                    <h3>
+                        Artem Gede
+                    </h3>
+                    <p>
+                        Investment Manager - EU
+                    </p>
+                </div>
+                <div class="our-team-member">
+                    <img alt="Portrait of Nabil Peerally"
+                        src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=128&w=128" />
+                    <h3>
+                        Nabil Peerally
+                    </h3>
+                    <p>
+                        Investment Country Director Mauritius
+                    </p>
+                </div>
+                <div class="our-team-member">
+                    <img alt="Portrait of Sarah Mangulamas"
+                        src="https://images.pexels.com/photos/2379003/pexels-photo-2379003.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=128&w=128" />
+                    <h3>
+                        Sarah Mangulamas
+                    </h3>
+                    <p>
+                        Investment Country Director Malaysia
+                    </p>
+                </div>
+                <div class="our-team-member">
+                    <img alt="Portrait of Arman Manukyan"
+                        src="https://images.pexels.com/photos/2379003/pexels-photo-2379003.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=128&w=128" />
+                    <h3>
+                        Arman Manukyan
+                    </h3>
+                    <p>
+                        Investment Country Director Armenia
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <section class="testimonials-section">
+            <h2 class="testimonials-heading">What Our Clients Say</h2>
+
+            <div class="testimonial">
+                <div class="client-info">
+                    <div class="client-photo"></div>
+                    <h3>London</h3>
+                    <p><em>Investor</em></p>
+                </div>
+                <div class="client-feedback">
+                    <p>
+                        Started my Dubai property journey with them in 2024. Their market analysis helped me secure a
+                        studio
+                        in Business Bay at pre-launch prices. Already seeing 20% appreciation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <div class="client-info">
+                    <div class="client-photo"></div>
+                    <h3>Singapore</h3>
+                    <p><em>Associate Partner</em></p>
+                </div>
+                <div class="client-feedback">
+                    <p>
+                        Worried about investing remotely, but their virtual tours and detailed documentation made
+                        everything
+                        transparent. My Downtown Dubai apartment now generates steady rental income.
+                    </p>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <div class="client-info">
+                    <div class="client-photo"></div>
+                    <h3>New Delhi</h3>
+                    <p><em>Business Owner</em></p>
+                </div>
+                <div class="client-feedback">
+                    <p>
+                        First-time investor who knew nothing about Dubai real estate. Their team guided me through every
+                        step – from choosing JBR as my target area to handling tenant contracts.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="contact-us-about-us-container">
+            <div class="contact-us-about-us-info">
+                <h1>Contact Us</h1>
+                <div class="contact-us-about-us-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>1201, Tower B, Opus by Omniyat, Business Bay Dubai</p>
+                </div>
+                <div class="contact-us-about-us-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>sales@marrfa.com</p>
+                </div>
+                <div class="contact-us-about-us-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+971-563282700</p>
+                </div>
+            </div>
+            <div class="contact-us-about-us-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.726217073073!2d55.27078231501068!3d25.18419798389664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f433d1b1b1b1b%3A0x1b1b1b1b1b1b1b1b!2sThe%20Opus%20by%20OMNIYAT%20designed%20by%20Zaha%20Hadid!5e0!3m2!1sen!2sae!4v1633023023023!5m2!1sen!2sae"
+                    width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="advertise-section mt-5">
+        <div class="advertise-container">
+            <p class="advertise-text">Looking to advertise a property? We can help.</p>
+            <a href="#" class="advertise-button">List your property with us</a>
+        </div>
+    </section>
+
+
+    <footer class="customFooter__section mt-5">
+        <div class="customFooter__top">
+            <div class="customFooter__column customFooter__logoCol">
+                <img src="logo.png" alt="Marrfa Logo" class="customFooter__logo" />
+                <p class="customFooter__desc">
+                    Welcome on board with Marrfa, your ultimate platform for cross-border real estate investments!
+                    Marrfa is your go-to hub for discovering, comparing, and investing in global properties, all in one
+                    place. With Marrfa, investing in real estate worldwide has never been easier or more transparent.
+                </p>
+                <div class="customFooter__socialIcons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="customFooter__column">
+                <h4 class="customFooter__title">Quick Access</h4>
+                <ul class="customFooter__list">
+                    <li><a href="#">Explore Projects</a></li>
+                    <li><a href="#">News and Articles</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+
+            <div class="customFooter__column">
+                <h4 class="customFooter__title">Contact Us</h4>
+                <ul class="customFooter__list customFooter__contact">
+                    <li><i class="fas fa-map-marker-alt"></i> 1201, Tower B, Opus by Omniyat, Business Bay, Dubai</li>
+                    <li><i class="fas fa-envelope"></i> sales@marrfa.com</li>
+                    <li><i class="fas fa-phone"></i> +1 (438) 806-6413</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="customFooter__divider" />
+
+        <div class="customFooter__bottom">
+            <ul class="customFooter__bottomLinks">
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Cookies Policy</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </ul>
+            <p class="customFooter__copyright">2024© All right reserved by Marrfa.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        const sidebar = document.getElementById("mobileSidebar");
+        const toggleBtn = document.querySelector(".sidebar-toggle-btn");
+
+        // Sidebar toggle button click event
+        toggleBtn.addEventListener("click", (event) => {
+            // Prevent click from propagating to the document
+            event.stopPropagation();
+            sidebar.classList.toggle("open");
+        });
+
+        // Close the sidebar if clicked outside
+        document.addEventListener("click", (event) => {
+            // Check if the click is outside of the sidebar and toggle button
+            if (!sidebar.contains(event.target) && !toggleBtn.contains(event.target)) {
+                sidebar.classList.remove("open");
+            }
+        });
+
+        // Prevent click event on the sidebar from propagating to the document
+        sidebar.addEventListener("click", (event) => {
+            event.stopPropagation();
+        });
+
+    </script>
+
+
+</body>
+
+</html>

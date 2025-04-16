@@ -1,0 +1,445 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/blogs-style.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <section class="hero-section">
+        <!-- Hamburger Button - Visible Only on Mobile -->
+        <button class="sidebar-toggle-btn navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Desktop Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+            <div class="container glass">
+                <a class="navbar-brand" href="#">
+                    <img src="https://cdn.prod.website-files.com/6736760549abb9514e976ad5/673ed8e4ea869941b69f77e1_logo1-07%20(1)%20(1)-p-2000.png"
+                        alt="MARRFA" height="40" />
+                </a>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/home/">
+                                <i class="fas fa-home"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/projects/">
+                                <i class="fas fa-solid fa-building"></i> Projects
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/search-properties/">
+                                <i class="fas fa-search"></i> Search Property
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/finance/">
+                                <i class="fas fa-chart-line"></i> Finance
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about-us/">
+                                <i class="fas fa-info-circle"></i> About Us
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blogs/">
+                                <i class="fas fa-blog"></i> Blogs
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <button class="callback-btn"><span>Request Callback</span></button>
+            </div>
+        </nav>
+
+        <!-- Sidebar (Only on Mobile) -->
+        <div class="mobile-sidebar" id="mobileSidebar">
+            <div class="sidebar-header">
+                <span class="close-btn" onclick="closeSidebar()">×</span>
+            </div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home/">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/projects/">
+                        <i class="fas fa-solid fa-building"></i> Projects
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/search-properties/">
+                        <i class="fas fa-search"></i> Search Property
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/finance/">
+                        <i class="fas fa-chart-line"></i> Finance
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about-us/">
+                        <i class="fas fa-info-circle"></i> About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/blogs/">
+                        <i class="fas fa-blog"></i> Blogs
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <section class="blog-section mt-5">
+            <div class="blog-header">
+                <h2>Latest on the Blog</h2>
+                <div class="search-bar">
+                    <input type="text" placeholder="Looking for something specific ?" />
+                    <span class="search-icon">&#128269;</span>
+                </div>
+            </div>
+
+            <div class="blog-content">
+                <!-- Left side: Featured post -->
+                <div class="featured-post">
+                    <div class="image-container">
+                        <img src="https://cdn.prod.website-files.com/673daeedc09880db8ca57ef3/6792c5b5dd1e7339df1ea08d_7590.jpg"
+                            alt="Blog Feature Image">
+                        <span class="badge">Blog</span>
+                    </div>
+                    <div class="post-info">
+                        <span class="date">January 24, 2025</span>
+                        <span class="category">Category: Exclusive</span>
+                        <h3>Why High-Yield Residential Properties Should Be Your Top Choice?</h3>
+                        <p>Benefits of a high rental yield investment.</p>
+                        <div class="post-actions">
+                            <a href="#">Read <span>&rarr;</span></a>
+                            <a href="#">Share</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side: Trending posts -->
+                <div class="trending-posts mt-4">
+                    <h3>Trending Posts</h3>
+
+                    <div class="trending-post">
+                        <div class="text">
+                            <span class="date">January 24, 2025</span> | <span class="category">Insights</span>
+                            <h4>Unlocking Dubai’s Real Estate: The Ultimate Guide to Property Investment Visas in 2024
+                            </h4>
+                            <p>The ultimate guide to property investment visas in...</p>
+                            <div class="post-actions">
+                                <a href="#">Read <span>&rarr;</span></a>
+                                <a href="#">Share <span>&#128279;</span></a>
+                            </div>
+                        </div>
+                        <img src="https://cdn.prod.website-files.com/673daeedc09880db8ca57ef3/6792c5b5dd1e7339df1ea08d_7590.jpg"
+                            alt="Trending 1">
+                    </div>
+
+                    <div class="trending-post">
+                        <div class="text">
+                            <span class="date">January 24, 2025</span> | <span class="category">Insights</span>
+                            <h4>Cracking the Code: Your Ultimate Guide to International Property Investment Taxes</h4>
+                            <p>Your ultimate guide to international property inve...</p>
+                            <div class="post-actions">
+                                <a href="#">Read <span>&rarr;</span></a>
+                                <a href="#">Share <span>&#128279;</span></a>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1527030280862-64139fba04ca" alt="Trending 2">
+                    </div>
+
+                    <div class="trending-post">
+                        <div class="text">
+                            <span class="date">January 24, 2025</span> | <span class="category">Exclusive</span>
+                            <h4>Investment Property vs. Savings: The Ultimate ROI Guide in Dubai</h4>
+                            <p>The ultimate ROI Guide in Dubai...</p>
+                            <div class="post-actions">
+                                <a href="#">Read <span>&rarr;</span></a>
+                                <a href="#">Share <span>&#128279;</span></a>
+                            </div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19" alt="Trending 3">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="news-articles-section">
+            <div class="top-bar">
+                <h2 class="section-title">News and Articles</h2>
+                <button class="subscribe-btn">
+                    <span class="bell-icon">🔔</span> Subscribe to notifications
+                </button>
+            </div>
+
+            <div class="tabs-bar">
+                <h3>Articles</h3>
+                <div class="sort-box">
+                    <span>Sort by:</span>
+                    <select>
+                        <option>Relevance</option>
+                        <option>Date</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="tags">
+                <button>Markets</button>
+                <button>Latest News</button>
+                <button>Finance</button>
+                <button>Insights</button>
+                <button>Exclusive</button>
+                <button>Real Estate</button>
+            </div>
+
+            <div class="cards">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-img">
+                        <span class="tag">Exclusive</span>
+                        <img src="https://cdn.prod.website-files.com/673daeedc09880db8ca57ef3/6792c5b5dd1e7339df1ea08d_7590.jpg"
+                            alt="Card 1">
+                    </div>
+                    <div class="card-content">
+                        <div class="meta">
+                            <span>January 24, 2025</span>
+                            <span>Exclusive</span>
+                        </div>
+                        <h4>Why High-Yield Residential Properties Should Be Your Top Choice?</h4>
+                        <p>Benefits of a high rental yield investment.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-img">
+                        <span class="tag">Exclusive</span>
+                        <img src="https://cdn.prod.website-files.com/673daeedc09880db8ca57ef3/6792c5b5dd1e7339df1ea08d_7590.jpg"
+                            alt="Card 2">
+                    </div>
+                    <div class="card-content">
+                        <div class="meta">
+                            <span>January 24, 2025</span>
+                            <span>Exclusive</span>
+                        </div>
+                        <h4>Investing in the Future: A Beginner’s Off-Plan Investment Guide in 2024</h4>
+                        <p>A beginner’s off-plan investment guide in 2024</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-img">
+                        <span class="tag">Insights</span>
+                        <img src="https://cdn.prod.website-files.com/673daeedc09880db8ca57ef3/6792c5b5dd1e7339df1ea08d_7590.jpg"
+                            alt="Card 3">
+                    </div>
+                    <div class="card-content">
+                        <div class="meta">
+                            <span>January 24, 2025</span>
+                            <span>Insights</span>
+                        </div>
+                        <h4>Unlocking Dubai’s Real Estate: The Ultimate Guide to Property Investment Visas in 2024</h4>
+                        <p>The ultimate guide to property investment visas in 2024</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card">
+                    <div class="card-img">
+                        <span class="tag">Latest News</span>
+                        <img src="https://cdn.prod.website-files.com/673daeedc09880db8ca57ef3/6792c5b5dd1e7339df1ea08d_7590.jpg"
+                            alt="Card 4">
+                    </div>
+                    <div class="card-content">
+                        <div class="meta">
+                            <span>January 24, 2025</span>
+                            <span>Latest News</span>
+                        </div>
+                        <h4>Unlocking Investment Success: Step by Step Calculative Guide to Rental Yield in Dubai</h4>
+                        <p>Step by step guide to calculating rental yield</p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="card">
+                    <div class="card-img">
+                        <span class="tag">Markets</span>
+                        <img src="https://cdn.prod.website-files.com/673daeedc09880db8ca57ef3/6792c5b5dd1e7339df1ea08d_7590.jpg"
+                            alt="Card 5">
+                    </div>
+                    <div class="card-content">
+                        <div class="meta">
+                            <span>January 24, 2025</span>
+                            <span>Markets</span>
+                        </div>
+                        <h4>Unlocking Investment Success: Step by Step Calculative Guide to Rental Yield in Dubai</h4>
+                        <p>Step by step guide to calculating rental yield</p>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="card">
+                    <div class="card-img">
+                        <span class="tag">Insights</span>
+                        <img src="https://cdn.prod.website-files.com/673daeedc09880db8ca57ef3/6792c5b5dd1e7339df1ea08d_7590.jpg"
+                            alt="Card 6">
+                    </div>
+                    <div class="card-content">
+                        <div class="meta">
+                            <span>January 24, 2025</span>
+                            <span>Insights</span>
+                        </div>
+                        <h4>Unlocking Dubai’s Real Estate: The Ultimate Guide to Property Investment Visas in 2024</h4>
+                        <p>The ultimate guide to property investment visas in 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="property-request-form mt-5">
+            <h1>Marrfa’s Managers are here to help you<br>select a property</h1>
+            <p>Leave a request, and our expert will contact you to clarify your enquiry and help select suitable
+                properties.
+            </p>
+
+            <div class="form-group">
+                <input type="text" placeholder="Enter Full Name">
+                <input type="email" placeholder="Enter your email">
+                <div class="phone-input">
+                    <div class="flag">
+                        <img src="https://flagcdn.com/ae.svg" width="20" alt="UAE">
+                        +971
+                    </div>
+                    <input type="tel" placeholder="Phone number">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <textarea
+                    placeholder="What are you looking for? For example, I’m looking for an apartment in Downtown Dubai"></textarea>
+            </div>
+
+            <button class="submit-btn">Submit</button>
+
+            <div class="disclaimer">
+                I confirm that I have read and accept the Privacy Policy and Personal Data Processing Guidelines.
+            </div>
+        </section>
+
+
+        <section class="advertise-section mt-5">
+            <div class="advertise-container">
+                <p class="advertise-text">Looking to advertise a property? We can help.</p>
+                <a href="#" class="advertise-button">List your property with us</a>
+            </div>
+        </section>
+
+
+        <footer class="customFooter__section mt-5">
+            <div class="customFooter__top">
+                <div class="customFooter__column customFooter__logoCol">
+                    <img src="logo.png" alt="Marrfa Logo" class="customFooter__logo" />
+                    <p class="customFooter__desc">
+                        Welcome on board with Marrfa, your ultimate platform for cross-border real estate investments!
+                        Marrfa is your go-to hub for discovering, comparing, and investing in global properties, all in
+                        one
+                        place. With Marrfa, investing in real estate worldwide has never been easier or more
+                        transparent.
+                    </p>
+                    <div class="customFooter__socialIcons">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="customFooter__column">
+                    <h4 class="customFooter__title">Quick Access</h4>
+                    <ul class="customFooter__list">
+                        <li><a href="#">Explore Projects</a></li>
+                        <li><a href="#">News and Articles</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="customFooter__column">
+                    <h4 class="customFooter__title">Contact Us</h4>
+                    <ul class="customFooter__list customFooter__contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 1201, Tower B, Opus by Omniyat, Business Bay, Dubai
+                        </li>
+                        <li><i class="fas fa-envelope"></i> sales@marrfa.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (438) 806-6413</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="customFooter__divider" />
+
+            <div class="customFooter__bottom">
+                <ul class="customFooter__bottomLinks">
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookies Policy</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+                <p class="customFooter__copyright">2024© All right reserved by Marrfa.</p>
+            </div>
+        </footer>
+
+        <script>
+            const sidebar = document.getElementById("mobileSidebar");
+            const toggleBtn = document.querySelector(".sidebar-toggle-btn");
+
+            // Sidebar toggle button click event
+            toggleBtn.addEventListener("click", (event) => {
+                // Prevent click from propagating to the document
+                event.stopPropagation();
+                sidebar.classList.toggle("open");
+            });
+
+            // Close the sidebar if clicked outside
+            document.addEventListener("click", (event) => {
+                // Check if the click is outside of the sidebar and toggle button
+                if (!sidebar.contains(event.target) && !toggleBtn.contains(event.target)) {
+                    sidebar.classList.remove("open");
+                }
+            });
+
+            // Prevent click event on the sidebar from propagating to the document
+            sidebar.addEventListener("click", (event) => {
+                event.stopPropagation();
+            });
+
+        </script>
+
+
+
+
+    </section>
+</body>
+
+</html>

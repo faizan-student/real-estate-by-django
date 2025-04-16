@@ -1,0 +1,977 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Estate Landing Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/home-style.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="background-grid"></div>
+    <div class="tech-light"></div>
+
+
+    <!-- Hamburger Button - Visible Only on Mobile -->
+    <button class="sidebar-toggle-btn navbar-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Desktop Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+        <div class="container glass">
+            <a class="navbar-brand" href="#">
+                <img src="https://cdn.prod.website-files.com/6736760549abb9514e976ad5/673ed8e4ea869941b69f77e1_logo1-07%20(1)%20(1)-p-2000.png"
+                    alt="MARRFA" height="40" />
+            </a>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/home/">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/projects/">
+                            <i class="fas fa-solid fa-building"></i> Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/search-properties/">
+                            <i class="fas fa-search"></i> Search Property
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/finance/">
+                            <i class="fas fa-chart-line"></i> Finance
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about-us/">
+                            <i class="fas fa-info-circle"></i> About Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blogs/">
+                            <i class="fas fa-blog"></i> Blogs
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+            <button class="callback-btn"><span>Request Callback</span></button>
+        </div>
+    </nav>
+
+    <!-- Sidebar (Only on Mobile) -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="sidebar-header">
+            <span class="close-btn" onclick="closeSidebar()">×</span>
+        </div>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="/home/">
+                    <i class="fas fa-home"></i> Home
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/projects/">
+                    <i class="fas fa-solid fa-building"></i> Projects
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/search-properties/">
+                    <i class="fas fa-search"></i> Search Property
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/finance/">
+                    <i class="fas fa-chart-line"></i> Finance
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about-us/">
+                    <i class="fas fa-info-circle"></i> About Us
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/blogs/">
+                    <i class="fas fa-blog"></i> Blogs
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+    <section class="hero-wrapper">
+        <div class="hero-section">
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <h1><span class="typed-text"></span><span class="cursor">&nbsp;</span></h1>
+
+                <div class="highlight">Find the perfect property with us</div>
+                <p>We help you discover premium real estate listings tailored to your needs. Whether you're buying,
+                    selling, or renting – we've got you covered with the best options in town.</p>
+                <button class="callback-btn"><span>Explore Now</span></button>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="hero-image">
+                <img class="hero-img active" src="{% static 'images/re1.png' %}" alt="Real Estate Property" />
+                <img class="hero-img" src="{% static 'images/re1.png' %}" alt="Property" />
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <section class="partners text-center">
+        <div class="container">
+            <h3>Our Trusted Partners</h3>
+            <div class="slider-wrapper">
+                <div class="slider-track">
+                    <img src="https://cdn.prod.website-files.com/6736760549abb9514e976ad5/6739651b55e14a019c460279_7595b591b0e9006919b03a603cfa66b8.png"
+                        alt="Emaar" />
+                    <img src="https://cdn.prod.website-files.com/6736760549abb9514e976ad5/6739679eb383817386395300_d3f8869e36dfefe7481f50f37520c48a%20(1).png"
+                        alt="Partner" />
+                    <img src="https://cdn.prod.website-files.com/6736760549abb9514e976ad5/673967ec04cea24f60814491_bed80ea13fdeb722b8f65703a2648df7.png"
+                        alt="Sobha" />
+
+                    <!-- Duplicate for smooth looping -->
+                    <img src="https://cdn.prod.website-files.com/6736760549abb9514e976ad5/6739651b55e14a019c460279_7595b591b0e9006919b03a603cfa66b8.png"
+                        alt="Emaar" />
+                    <img src="https://cdn.prod.website-files.com/6736760549abb9514e976ad5/6739679eb383817386395300_d3f8869e36dfefe7481f50f37520c48a%20(1).png"
+                        alt="Partner" />
+                    <img src="https://cdn.prod.website-files.com/6736760549abb9514e976ad5/673967ec04cea24f60814491_bed80ea13fdeb722b8f65703a2648df7.png"
+                        alt="Sobha" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="investment-section" class="investment-section-wrapper">
+        <div class="investment-header">
+            <h2>Streamline Your Investment Journey and Unlock Global Opportunities</h2>
+            <p>Seamlessly access and compare property investments with Marrfa’s data-driven tools and dedicated support,
+                all in one platform.</p>
+        </div>
+
+        <div class="investment-flow-container">
+            <!-- Left Box -->
+            <div class="investment-card-left">
+                <img src="https://i.ibb.co/d6PtCJG/pool.jpg" alt="Pool" />
+                <div class="investment-left-details">
+                    <h4>Luxury Penthouse in Palm Jumeirah</h4>
+                    <p><strong>Deal type</strong><br>Close ended fund</p>
+                    <p><strong>Type of equity</strong><br>Equity</p>
+                    <p><strong>Asset type</strong><br>Multifamily</p>
+                    <button>+Add deal</button>
+                </div>
+            </div>
+
+            <!-- Middle Box -->
+            <div class="investment-card-middle">
+                <div class="investment-middle-top">
+                    <h4>Key Information</h4>
+                    <div class="info-grid">
+                        <div><strong>AED 1,50,000</strong><br>Price from</div>
+                        <div><strong>2800 km. sq.</strong><br>Area from</div>
+                        <div><strong>Q3 2025</strong><br>Completion date</div>
+                        <div><strong>7.5%</strong><br>Yield</div>
+                        <div><strong>Commercial</strong><br>Property type</div>
+                        <div><strong>4.7</strong><br>Marrfa</div>
+                        <div><strong>1:2:1</strong><br>Payment Plan</div>
+                        <div><strong>Urban</strong><br>Location</div>
+                        <div><strong>5 years</strong><br>Term</div>
+                    </div>
+                </div>
+                <div class="investment-middle-bottom">
+                    <h4>Features</h4>
+                    <div class="features-grid">
+                        <span>Smart Appliances</span>
+                        <span>Outdoor Kitchen</span>
+                        <span>Fitness Room</span>
+                        <span>Living Area</span>
+                        <span>Spa-Like Bathroom</span>
+                        <span>Exclusive environment</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Box -->
+            <div class="investment-card-right">
+                <div class="investment-right-icon">
+                    <img src="https://i.ibb.co/5c3H9Df/marrfa-icon.png" alt="M Icon" />
+                </div>
+                <h4>Luxury Penthouse in Palm Jumeirah</h4>
+                <button class="invest-now-btn">Invest now</button>
+            </div>
+        </div>
+
+        <div class="investment-footer">
+            <button class="explore-projects-btn">Explore Projects</button>
+        </div>
+    </section>
+
+
+    <section class="property-card">
+        <div class="property-info">
+            <h2>Anwa by Omniyat</h2>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> Dubai Maritime City</p>
+
+            <div class="price-date">
+                <div>
+                    AED 1,900,000
+                    <small>START PRICE FROM</small>
+                </div>
+                <div>
+                    Q1 2028
+                    <small>COMPLETION DATE</small>
+                </div>
+            </div>
+
+            <div class="features">
+                <div><i class="fas fa-vector-square"></i> 718 sqft</div>
+                <div><i class="fas fa-chart-line"></i> 8.4%</div>
+                <div><i class="fas fa-home"></i> Residential</div>
+            </div>
+
+            <div class="cta">
+                <button>See More</button>
+                <i class="fab fa-whatsapp whatsapp"></i>
+            </div>
+        </div>
+
+        <div class="property-image"></div>
+    </section>
+
+
+
+
+
+
+
+    <section class="marrfa-success-section">
+        <h2 class="marrfa-title">Marrfa’s Success Stories</h2>
+        <p class="marrfa-subtitle">
+            Since inception, Marrfa has helped investors unlock new opportunities, achieve
+            strong returns, and build successful portfolios across global markets.
+        </p>
+
+        <div class="marrfa-carousel-container">
+            <button class="marrfa-arrow marrfa-prev">&lt;</button>
+
+            <div class="marrfa-carousel-viewport">
+                <div class="marrfa-carousel-track">
+                    <div class="marrfa-slide">
+                        <img src="{% static 'images/re1.png' %}" alt="Slide 1">
+                        <div class="marrfa-slide-content">
+                            <p class="marrfa-date">27th November, 2024</p>
+                            <h3 class="marrfa-heading">Thorough due diligence process.</h3>
+                            <p class="marrfa-description">The team flagged potential issues I would have missed as a
+                                first-timer. Now a year later, my portfolio looks consistent with 8–10% yields.</p>
+                        </div>
+                    </div>
+
+                    <div class="marrfa-slide">
+                        <img src="{% static 'images/re1.png' %}" alt="Slide 2">
+                        <div class="marrfa-slide-content">
+                            <p class="marrfa-date">10th January, 2025</p>
+                            <h3 class="marrfa-heading">Exceptional service throughout.</h3>
+                            <p class="marrfa-description">Marrfa’s advisors walked me through everything and gave me
+                                full confidence. My investment saw results within months.</p>
+                        </div>
+                    </div>
+
+                    <div class="marrfa-slide">
+                        <img src="{% static 'images/re1.png' %}" alt="Slide 3">
+                        <div class="marrfa-slide-content">
+                            <p class="marrfa-date">5th February, 2025</p>
+                            <h3 class="marrfa-heading">Strong global insights.</h3>
+                            <p class="marrfa-description">They understood the market trends before I did and helped me
+                                diversify just in time. True professionals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="marrfa-arrow marrfa-next">&gt;</button>
+        </div>
+
+        <div class="marrfa-dots">
+            <span class="marrfa-dot active" data-index="0"></span>
+            <span class="marrfa-dot" data-index="1"></span>
+            <span class="marrfa-dot" data-index="2"></span>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="trending-section">
+        <div class="container">
+            <h2 class="trending-heading">Explore Our Trending Projects</h2>
+            <p class="trending-subheading">
+                Discover lucrative real estate opportunities with high potential for growth and profitable returns.
+            </p>
+
+            <div class="trending-card-wrapper">
+                <!-- Project Card 1 -->
+                <div class="trending-card">
+                    <div class="trending-img-box">
+                        <img src="{% static 'images/re1.png' %}" alt="Samana Resorts" />
+                        <div class="trending-badge">🏷️ Arrfa’s Choice</div>
+                    </div>
+                    <div class="trending-content">
+                        <h5 class="trending-title">Samana Resorts</h5>
+                        <p class="trending-location">📍 Production City, Dubai</p>
+                        <div class="trending-info">
+                            <div><strong>AED 1,250,000</strong><br><small>START PRICE FROM</small></div>
+                            <div><strong>Q2 2028</strong><br><small>COMPLETION DATE</small></div>
+                        </div>
+                        <div class="trending-meta">
+                            <span>📏 1,434 sqft</span>
+                            <span>📈 8.2%</span>
+                            <span>🏠 Residential</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="trending-card">
+                    <div class="trending-img-box">
+                        <img src="{% static 'images/re1.png' %}" alt="W Residences" />
+                        <div class="trending-badge">🏷️ Arrfa’s Choice</div>
+                    </div>
+                    <div class="trending-content">
+                        <h5 class="trending-title">W Residences</h5>
+                        <p class="trending-location">📍 JLT</p>
+                        <div class="trending-info">
+                            <div><strong>AED 3,612,982</strong><br><small>START PRICE FROM</small></div>
+                            <div><strong>Q4 2028</strong><br><small>COMPLETION DATE</small></div>
+                        </div>
+                        <div class="trending-meta">
+                            <span>📏 1,381 sqft</span>
+                            <span>📈 7.9%</span>
+                            <span>🏠 Residential</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="trending-card">
+                    <div class="trending-img-box">
+                        <img src="{% static 'images/re1.png' %}" alt="Vitalia" />
+                        <div class="trending-badge">🏷️ Arrfa’s Choice</div>
+                    </div>
+                    <div class="trending-content">
+                        <h5 class="trending-title">Vitalia</h5>
+                        <p class="trending-location">📍 Palm Jumeirah, Dubai</p>
+                        <div class="trending-info">
+                            <div><strong>AED 7,900,000</strong><br><small>START PRICE FROM</small></div>
+                            <div><strong>Q4 2026</strong><br><small>COMPLETION DATE</small></div>
+                        </div>
+                        <div class="trending-meta">
+                            <span>📏 1,939 sqft</span>
+                            <span>📈 7.5%</span>
+                            <span>🏠 Residential</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="insightCards__section">
+        <h2 class="insightCards__heading">Explore our Insights</h2>
+
+        <div class="insightCards__grid">
+            <!-- Card 1 -->
+            <div class="insightCards__card">
+                <div class="insightCards__imageWrapper">
+                    <span class="insightCards__tag">News</span>
+                    <img src="{% static 'images/re1.png' %}" alt="Dubai Skyline">
+                </div>
+                <div class="insightCards__text">
+                    <div class="insightCards__meta">
+                        <span>December 5, 2024</span>
+                        <span class="insightCards__dot">•</span>
+                        <span>Insights</span>
+                    </div>
+                    <h3 class="insightCards__title">Investing in Dubai Real Estate: An Indian Buyer’s Complete Guide
+                    </h3>
+                    <p class="insightCards__desc">A comprehensive guide to buying real estate in Dubai from India</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="insightCards__card">
+                <div class="insightCards__imageWrapper">
+                    <span class="insightCards__tag">News</span>
+                    <img src="{% static 'images/re1.png' %}" alt="Dubai Investment">
+                </div>
+                <div class="insightCards__text">
+                    <div class="insightCards__meta">
+                        <span>January 24, 2025</span>
+                        <span class="insightCards__dot">•</span>
+                        <span>Insights</span>
+                    </div>
+                    <h3 class="insightCards__title">Unlocking Dubai’s Real Estate: The Ultimate Guide to Property
+                        Investment Visas in 2024</h3>
+                    <p class="insightCards__desc">The ultimate guide to property investment visas in 2024</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="insightCards__card">
+                <div class="insightCards__imageWrapper">
+                    <span class="insightCards__tag">News</span>
+                    <img src="{% static 'images/re1.png' %}" alt="International Property">
+                </div>
+                <div class="insightCards__text">
+                    <div class="insightCards__meta">
+                        <span>January 24, 2025</span>
+                        <span class="insightCards__dot">•</span>
+                        <span>Insights</span>
+                    </div>
+                    <h3 class="insightCards__title">Cracking the Code: Your Ultimate Guide to International Property
+                        Investment Taxes</h3>
+                    <p class="insightCards__desc">Your ultimate guide to international property investment taxes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="insightCards__nav">
+            <button class="insightCards__navBtn">&#8592;</button>
+            <button class="insightCards__navBtn">&#8594;</button>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="propertyForm__section">
+        <div class="propertyForm__container">
+            <div class="propertyForm__left">
+                <h2>Looking to advertise a<br>property? We can help.</h2>
+            </div>
+            <div class="propertyForm__right">
+                <form class="propertyForm__form">
+                    <div class="propertyForm__row">
+                        <input type="text" placeholder="Enter Full Name" class="propertyForm__input" />
+                        <input type="email" placeholder="Enter your email" class="propertyForm__input" />
+                    </div>
+
+                    <div class="propertyForm__row">
+                        <div class="propertyForm__phoneField">
+                            <select class="propertyForm__countryCode">
+                                <option value="+91">🇮🇳 +91</option>
+                                <option value="+1">🇺🇸 +1</option>
+                                <option value="+44">🇬🇧 +44</option>
+                            </select>
+                            <input type="tel" placeholder="Phone number" class="propertyForm__phoneInput" />
+                        </div>
+                    </div>
+
+                    <textarea placeholder="What are you looking for?" class="propertyForm__textarea"></textarea>
+
+                    <button type="submit" class="propertyForm__submitBtn">Submit</button>
+
+                    <p class="propertyForm__disclaimer">
+                        I confirm that I have read and accept the <a href="#">Privacy Policy</a> and <a
+                            href="#">Personal Data Processing Guidelines</a>.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <footer class="customFooter__section">
+        <div class="customFooter__top">
+            <div class="customFooter__column customFooter__logoCol">
+                <img src="{% static 'images/logo.png' %}" alt="Marrfa Logo" class="customFooter__logo" />
+                <p class="customFooter__desc">
+                    Welcome on board with Marrfa, your ultimate platform for cross-border real estate investments!
+                    Marrfa is your go-to hub for discovering, comparing, and investing in global properties, all in one
+                    place. With Marrfa, investing in real estate worldwide has never been easier or more transparent.
+                </p>
+                <div class="customFooter__socialIcons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="customFooter__column">
+                <h4 class="customFooter__title">Quick Access</h4>
+                <ul class="customFooter__list">
+                    <li><a href="#">Explore Projects</a></li>
+                    <li><a href="#">News and Articles</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+
+            <div class="customFooter__column">
+                <h4 class="customFooter__title">Contact Us</h4>
+                <ul class="customFooter__list customFooter__contact">
+                    <li><i class="fas fa-map-marker-alt"></i> 1201, Tower B, Opus by Omniyat, Business Bay, Dubai</li>
+                    <li><i class="fas fa-envelope"></i> sales@marrfa.com</li>
+                    <li><i class="fas fa-phone"></i> +1 (438) 806-6413</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="customFooter__divider" />
+
+        <div class="customFooter__bottom">
+            <ul class="customFooter__bottomLinks">
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Cookies Policy</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </ul>
+            <p class="customFooter__copyright">2024© All right reserved by Marrfa.</p>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Cursor Neon Glow -->
+    <div class="cursor-glow"></div>
+
+    <script>
+        const glow = document.querySelector('.cursor-glow');
+
+        document.addEventListener('mousemove', (e) => {
+            glow.style.left = `${e.clientX}px`;
+            glow.style.top = `${e.clientY}px`;
+        });
+    </script>
+
+    <script>
+        // Smooth Navbar slide-in
+        gsap.from(".navbar", {
+            y: -60,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power3.out"
+        });
+
+        // Hero Section reveal
+        gsap.from(".hero-content h1", {
+            y: 60,
+            opacity: 0,
+            duration: 1.2,
+            delay: 0.3,
+            ease: "expo.out"
+        });
+
+        gsap.from(".hero-content .highlight", {
+            x: -60,
+            opacity: 0,
+            duration: 1,
+            delay: 0.6,
+            ease: "expo.out"
+        });
+
+        gsap.from(".hero-content p", {
+            y: 40,
+            opacity: 0,
+            duration: 1,
+            delay: 0.8,
+            ease: "expo.out"
+        });
+
+        gsap.from(".hero-btn", {
+            scale: 0.8,
+            opacity: 0,
+            duration: 0.8,
+            delay: 1.2,
+            ease: "back.out(1.7)"
+        });
+
+        // Hero image subtle float
+        gsap.to(".hero-image img", {
+            y: 10,
+            duration: 2,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+
+        // Scroll-triggered: Partners
+        gsap.from(".partners img", {
+            scrollTrigger: {
+                trigger: ".partners",
+                start: "top 85%",
+            },
+            opacity: 0,
+            y: 60,
+            duration: 1.2,
+            stagger: 0.2,
+            ease: "power2.out"
+        });
+
+        // Parallax mouse hover effect (hero image)
+        const heroImg = document.querySelector(".hero-image img");
+        document.addEventListener("mousemove", (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.02;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.02;
+            gsap.to(heroImg, {
+                x: moveX,
+                y: moveY,
+                duration: 0.4
+            });
+        });
+
+        // Magnetic CTA Button Effect
+        const btn = document.querySelector(".hero-btn");
+        const strength = 25;
+
+        btn.addEventListener("mousemove", (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            gsap.to(btn, {
+                x: x / strength,
+                y: y / strength,
+                duration: 0.3
+            });
+        });
+
+        btn.addEventListener("mouseleave", () => {
+            gsap.to(btn, {
+                x: 0,
+                y: 0,
+                duration: 0.3
+            });
+        });
+    </script>
+
+    <script>
+        const images = document.querySelectorAll(".hero-img");
+        let current = 0;
+
+        function showNextImage() {
+            const total = images.length;
+            const next = (current + 1) % total;
+
+            // Fade current out
+            gsap.to(images[current], {
+                opacity: 0,
+                duration: 1,
+                onComplete: () => {
+                    images[current].classList.remove("active");
+                }
+            });
+
+            gsap.fromTo(images[next],
+                { opacity: 0, scale: 1.1 },
+                { opacity: 1, scale: 1, duration: 1.5, ease: "power2.out" }
+            );
+
+
+            current = next;
+        }
+
+        // First image visible on load
+        images[0].classList.add("active");
+
+        // Change image every 5 seconds
+        setInterval(showNextImage, 5000);
+    </script>
+
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Investment Section Animation
+        gsap.from("#investment-section .investment-header h2", {
+            opacity: 0,
+            y: -50,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: "#investment-section",
+                start: "top 80%",
+                toggleActions: "play none none reset"
+            }
+        });
+
+        gsap.from("#investment-section .investment-header p", {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            delay: 0.3,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: "#investment-section",
+                start: "top 80%",
+                toggleActions: "play none none reset"
+            }
+        });
+
+        gsap.from(".investment-card-left, .investment-card-middle, .investment-card-right", {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            stagger: 0.3,
+            ease: "back.out(1.7)",
+            scrollTrigger: {
+                trigger: ".investment-flow-container",
+                start: "top 80%",
+                toggleActions: "play none none reset"
+            }
+        });
+
+        // Property Card Animation
+        gsap.from(".property-card .property-info", {
+            x: -100,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".property-card",
+                start: "top 85%",
+                toggleActions: "play none none reset"
+            }
+        });
+
+        gsap.from(".property-card .property-image", {
+            scale: 0.8,
+            opacity: 0,
+            duration: 1,
+            delay: 0.2,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".property-card",
+                start: "top 85%",
+                toggleActions: "play none none reset"
+            }
+        });
+
+        // Marrfa Success Carousel Animation
+        gsap.from(".marrfa-slide", {
+            x: 100,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.3,
+            ease: "expo.out",
+            scrollTrigger: {
+                trigger: ".marrfa-carousel-track",
+                start: "top 80%",
+                toggleActions: "play none none reset"
+            }
+        });
+
+        // Trending Section Cards
+        gsap.utils.toArray(".trending-card").forEach((card, index) => {
+            gsap.from(card, {
+                opacity: 0,
+                y: 60,
+                duration: 1.2,
+                delay: index * 0.2,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 90%",
+                    toggleActions: "play none none reset"
+                }
+            });
+        });
+
+
+        // Insights Cards
+        gsap.from(".insightCards__card", {
+            opacity: 0,
+            scale: 0.9,
+            duration: 1,
+            stagger: 0.2,
+            ease: "back.out(1.4)",
+            scrollTrigger: {
+                trigger: ".insightCards__grid",
+                start: "top 85%",
+                toggleActions: "play none none reset"
+            }
+        });
+
+        // Insight Section Heading
+        gsap.from(".insightCards__heading", {
+            y: -40,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".insightCards__heading",
+                start: "top 90%",
+                toggleActions: "play none none reset"
+            }
+        });
+
+        // Ensure everything refreshes after DOM load
+        window.addEventListener("load", function () {
+            ScrollTrigger.refresh();
+        });
+    </script>
+
+
+
+
+    <script>
+
+        // Create magnifier glass
+        const magnifier = document.createElement("div");
+        Object.assign(magnifier.style, {
+            position: "absolute",
+            pointerEvents: "none",
+            width: "120px",
+            height: "120px",
+            borderRadius: "50%",
+            overflow: "hidden",
+            border: "2px solid rgba(255,255,255,0.3)",
+            boxShadow: "0 0 15px rgba(0,0,0,0.2)",
+            backdropFilter: "blur(4px)",
+            zIndex: "9999",
+            transform: "scale(0)",
+            transition: "transform 0.2s ease",
+            background: "#ffffff05",
+        });
+        document.body.appendChild(magnifier);
+
+        // Target headings
+        document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(heading => {
+            heading.style.position = "relative";
+
+            heading.addEventListener("mousemove", e => {
+                const rect = heading.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                magnifier.style.left = `${e.pageX - 60}px`;
+                magnifier.style.top = `${e.pageY - 60}px`;
+                magnifier.style.transform = "scale(1)";
+
+                // Exact copy of the heading in magnifier
+                const computed = window.getComputedStyle(heading);
+                magnifier.innerHTML = `
+            <div style="
+                position: absolute;
+                top: -${y - 60}px;
+                left: -${x - 60}px;
+                transform: scale(2);
+                transform-origin: ${x}px ${y}px;
+                width: ${rect.width}px;
+                height: ${rect.height}px;
+                font-family: ${computed.fontFamily};
+                font-size: ${computed.fontSize};
+                font-weight: ${computed.fontWeight};
+                line-height: ${computed.lineHeight};
+                letter-spacing: ${computed.letterSpacing};
+                color: ${computed.color};
+                background: transparent;
+            ">
+                ${heading.textContent}
+            </div>
+        `;
+            });
+
+            heading.addEventListener("mouseleave", () => {
+                magnifier.style.transform = "scale(0)";
+            });
+        });
+
+
+        document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((heading) => {
+            const line = document.createElement("div");
+            line.style.position = "absolute";
+            line.style.height = "2px";
+            line.style.width = "0";
+            line.style.background = "linear-gradient(90deg, #00fff7, transparent)";
+            line.style.bottom = "0";
+            line.style.left = "0";
+            line.style.transition = "width 0.4s ease";
+            line.style.pointerEvents = "none";
+            heading.style.position = "relative";
+            heading.appendChild(line);
+
+            heading.addEventListener("mouseenter", () => {
+                line.style.width = "100%";
+            });
+            heading.addEventListener("mouseleave", () => {
+                line.style.width = "0";
+            });
+        });
+
+    </script>
+
+    <script>
+        const sidebar = document.getElementById("mobileSidebar");
+        const toggleBtn = document.querySelector(".sidebar-toggle-btn");
+
+        // Sidebar toggle button click event
+        toggleBtn.addEventListener("click", (event) => {
+            // Prevent click from propagating to the document
+            event.stopPropagation();
+            sidebar.classList.toggle("open");
+        });
+
+        // Close the sidebar if clicked outside
+        document.addEventListener("click", (event) => {
+            // Check if the click is outside of the sidebar and toggle button
+            if (!sidebar.contains(event.target) && !toggleBtn.contains(event.target)) {
+                sidebar.classList.remove("open");
+            }
+        });
+
+        // Prevent click event on the sidebar from propagating to the document
+        sidebar.addEventListener("click", (event) => {
+            event.stopPropagation();
+        });
+
+    </script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/application.js' %}"></script>
+
+</body>
+
+</html>

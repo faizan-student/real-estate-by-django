@@ -1,0 +1,368 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Property Finance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/finance-style.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <section class="hero-section">
+        <!-- Hamburger Button - Visible Only on Mobile -->
+        <button class="sidebar-toggle-btn navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Desktop Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+            <div class="container glass">
+                <a class="navbar-brand" href="#">
+                    <img src="https://cdn.prod.website-files.com/6736760549abb9514e976ad5/673ed8e4ea869941b69f77e1_logo1-07%20(1)%20(1)-p-2000.png"
+                        alt="MARRFA" height="40" />
+                </a>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/home/">
+                                <i class="fas fa-home"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/projects/">
+                                <i class="fas fa-solid fa-building"></i> Projects
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/search-properties/">
+                                <i class="fas fa-search"></i> Search Property
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/finance/">
+                                <i class="fas fa-chart-line"></i> Finance
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about-us/">
+                                <i class="fas fa-info-circle"></i> About Us
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blogs/">
+                                <i class="fas fa-blog"></i> Blogs
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <button class="callback-btn"><span>Request Callback</span></button>
+            </div>
+        </nav>
+
+        <!-- Sidebar (Only on Mobile) -->
+        <div class="mobile-sidebar" id="mobileSidebar">
+            <div class="sidebar-header">
+                <span class="close-btn" onclick="closeSidebar()">×</span>
+            </div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home/">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/projects/">
+                        <i class="fas fa-solid fa-building"></i> Projects
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/search-properties/">
+                        <i class="fas fa-search"></i> Search Property
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/finance/">
+                        <i class="fas fa-chart-line"></i> Finance
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about-us/">
+                        <i class="fas fa-info-circle"></i> About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/blogs/">
+                        <i class="fas fa-blog"></i> Blogs
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- Hero Content -->
+        <div class="hero-content text-white text-center">
+            <h1 class="fw-bold">
+                Explore Our Curated Collection of Property Brochures <br />
+                for Smart Investment Decisions
+            </h1>
+
+
+        </div>
+    </section>
+
+    <section class="mortgage-section">
+        <h2 class="section-heading">Get a Quick Mortgage Estimate</h2>
+
+        <div class="form-container">
+            <div class="input-column">
+                <label>PROPERTY PRICE</label>
+                <input type="text" placeholder="Enter price of property" />
+
+                <label>DOWN PAYMENT</label>
+                <input type="text" placeholder="Enter amount" />
+            </div>
+
+            <div class="slider-column">
+                <label>LOAN TERM <span class="slider-value">5 (YEARS)</span></label>
+                <input type="range" min="1" max="30" value="5" class="slider" />
+
+                <label>INTEREST RATE <span class="slider-value">4.00% (P.A.)</span></label>
+                <input type="range" min="1" max="15" value="4" step="0.1" class="slider" />
+            </div>
+        </div>
+
+        <button class="calculate-btn">Calculate</button>
+
+        <div class="results">
+            <div>
+                <label>MORTGAGE PER MONTH</label>
+                <input type="text" readonly />
+            </div>
+            <div>
+                <label>REPAYMENTS PER YEAR</label>
+                <input type="text" readonly />
+            </div>
+            <div>
+                <label>REPAYMENTS ALL TIME</label>
+                <input type="text" readonly />
+            </div>
+        </div>
+    </section>
+
+
+    <section class="unique-container">
+        <h1 class="unique-heading">Why choose Marrfa for your Mortgage?</h1>
+        <p class="unique-paragraph">Tailor mortgage solutions for maximum returns on your investments</p>
+        <div class="unique-grid">
+            <div class="unique-card">
+                <i class="fas fa-tag"></i>
+                <h2>Exclusive Offers</h2>
+            </div>
+            <div class="unique-card">
+                <i class="fas fa-check-circle"></i>
+                <h2>Expert Guidance</h2>
+            </div>
+            <div class="unique-card">
+                <i class="fas fa-tachometer-alt"></i>
+                <h2>Faster Approvals</h2>
+            </div>
+            <div class="unique-card">
+                <i class="fas fa-edit"></i>
+                <h2>Customised Plans</h2>
+            </div>
+        </div>
+        <div class="unique-button-container">
+            <a href="#" class="unique-button">
+                Learn more about Marrfa mortgage <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+
+
+    <section class="container">
+        <h1>Your path to a hassle free mortgage</h1>
+        <div class="steps">
+            <div class="step">
+                <div class="content">
+                    <h2>Find your ideal property</h2>
+                    <ul>
+                        <li>Browse available listings.</li>
+                        <li>Compare locations and prices.</li>
+                        <li>Shortlist properties based on your needs.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="step">
+                <div class="content">
+                    <h2>Customise your mortgage</h2>
+                    <ul>
+                        <li>Choose the loan type that fits.</li>
+                        <li>Select your preferred term and interest rate.</li>
+                        <li>Calculate monthly payments for clarity.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="step">
+                <div class="content">
+                    <h2>Find your ideal property</h2>
+                    <ul>
+                        <li>Submit necessary financial documents.</li>
+                        <li>Receive quick credit assessment.</li>
+                        <li>Get pre-approval status in minutes.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="step">
+                <div class="content">
+                    <h2>Find your ideal property</h2>
+                    <ul>
+                        <li>Finalize paperwork and sign the contract.</li>
+                        <li>Transfer funds and complete the transaction.</li>
+                        <li>Move into your new home with ease!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="testimonials-section">
+        <h2 class="testimonials-heading">What Our Clients Say</h2>
+
+        <div class="testimonial">
+            <div class="client-info">
+                <div class="client-photo"></div>
+                <h3>London</h3>
+                <p><em>Investor</em></p>
+            </div>
+            <div class="client-feedback">
+                <p>
+                    Started my Dubai property journey with them in 2024. Their market analysis helped me secure a studio
+                    in Business Bay at pre-launch prices. Already seeing 20% appreciation.
+                </p>
+            </div>
+        </div>
+
+        <div class="testimonial">
+            <div class="client-info">
+                <div class="client-photo"></div>
+                <h3>Singapore</h3>
+                <p><em>Associate Partner</em></p>
+            </div>
+            <div class="client-feedback">
+                <p>
+                    Worried about investing remotely, but their virtual tours and detailed documentation made everything
+                    transparent. My Downtown Dubai apartment now generates steady rental income.
+                </p>
+            </div>
+        </div>
+
+        <div class="testimonial">
+            <div class="client-info">
+                <div class="client-photo"></div>
+                <h3>New Delhi</h3>
+                <p><em>Business Owner</em></p>
+            </div>
+            <div class="client-feedback">
+                <p>
+                    First-time investor who knew nothing about Dubai real estate. Their team guided me through every
+                    step – from choosing JBR as my target area to handling tenant contracts.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="advertise-section">
+        <div class="advertise-container">
+            <p class="advertise-text">Looking to advertise a property? We can help.</p>
+            <a href="#" class="advertise-button">List your property with us</a>
+        </div>
+    </section>
+
+    <footer class="customFooter__section">
+        <div class="customFooter__top">
+            <div class="customFooter__column customFooter__logoCol">
+                <img src="/images/logo.png" alt="Marrfa Logo" class="customFooter__logo" />
+                <p class="customFooter__desc">
+                    Welcome on board with Marrfa, your ultimate platform for cross-border real estate investments!
+                    Marrfa is your go-to hub for discovering, comparing, and investing in global properties, all in one
+                    place. With Marrfa, investing in real estate worldwide has never been easier or more transparent.
+                </p>
+                <div class="customFooter__socialIcons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="customFooter__column">
+                <h4 class="customFooter__title">Quick Access</h4>
+                <ul class="customFooter__list">
+                    <li><a href="#">Explore Projects</a></li>
+                    <li><a href="#">News and Articles</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+
+            <div class="customFooter__column">
+                <h4 class="customFooter__title">Contact Us</h4>
+                <ul class="customFooter__list customFooter__contact">
+                    <li><i class="fas fa-map-marker-alt"></i> 1201, Tower B, Opus by Omniyat, Business Bay, Dubai</li>
+                    <li><i class="fas fa-envelope"></i> sales@marrfa.com</li>
+                    <li><i class="fas fa-phone"></i> +1 (438) 806-6413</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="customFooter__divider" />
+
+        <div class="customFooter__bottom">
+            <ul class="customFooter__bottomLinks">
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Cookies Policy</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </ul>
+            <p class="customFooter__copyright">2024© All right reserved by Marrfa.</p>
+        </div>
+    </footer>
+    <script>
+        const sidebar = document.getElementById("mobileSidebar");
+        const toggleBtn = document.querySelector(".sidebar-toggle-btn");
+
+        // Sidebar toggle button click event
+        toggleBtn.addEventListener("click", (event) => {
+            // Prevent click from propagating to the document
+            event.stopPropagation();
+            sidebar.classList.toggle("open");
+        });
+
+        // Close the sidebar if clicked outside
+        document.addEventListener("click", (event) => {
+            // Check if the click is outside of the sidebar and toggle button
+            if (!sidebar.contains(event.target) && !toggleBtn.contains(event.target)) {
+                sidebar.classList.remove("open");
+            }
+        });
+
+        // Prevent click event on the sidebar from propagating to the document
+        sidebar.addEventListener("click", (event) => {
+            event.stopPropagation();
+        });
+
+    </script>
+
+</body>
+
+</html>

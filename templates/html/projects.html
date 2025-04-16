@@ -1,0 +1,297 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Listing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/projects-style.css' %}" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="background-grid"></div>
+    <!-- Background Section -->
+    <section class="hero-section">
+        <!-- Hamburger Button - Visible Only on Mobile -->
+        <button class="sidebar-toggle-btn navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Desktop Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+            <div class="container glass">
+                <a class="navbar-brand" href="#">
+                    <img src="https://cdn.prod.website-files.com/6736760549abb9514e976ad5/673ed8e4ea869941b69f77e1_logo1-07%20(1)%20(1)-p-2000.png"
+                        alt="MARRFA" height="40" />
+                </a>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/home/">
+                                <i class="fas fa-home"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/projects/">
+                                <i class="fas fa-solid fa-building"></i> Projects
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/search-properties/">
+                                <i class="fas fa-search"></i> Search Property
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/finance/">
+                                <i class="fas fa-chart-line"></i> Finance
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about-us/">
+                                <i class="fas fa-info-circle"></i> About Us
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blogs/">
+                                <i class="fas fa-blog"></i> Blogs
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <button class="callback-btn"><span>Request Callback</span></button>
+            </div>
+        </nav>
+
+        <!-- Sidebar (Only on Mobile) -->
+        <div class="mobile-sidebar" id="mobileSidebar">
+            <div class="sidebar-header">
+                <span class="close-btn" onclick="closeSidebar()">×</span>
+            </div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home/">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/projects/">
+                        <i class="fas fa-solid fa-building"></i> Projects
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/search-properties/">
+                        <i class="fas fa-search"></i> Search Property
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/finance/">
+                        <i class="fas fa-chart-line"></i> Finance
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about-us/">
+                        <i class="fas fa-info-circle"></i> About Us
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/blogs/">
+                        <i class="fas fa-blog"></i> Blogs
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="hero-content text-white text-center">
+            <h1 class="fw-bold">
+                Explore Our Curated Collection of Property Brochures <br />
+                for Smart Investment Decisions
+            </h1>
+
+            <div class="search-bar mt-4 mx-auto">
+                <input type="text" placeholder="Looking for something specific ?" />
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="brochure-section">
+        <div class="controls">
+            <div class="dropdown">
+                <button class="dropdown-btn">Filters ▾</button>
+                <ul class="dropdown-menu">
+                    <li>Option 1</li>
+                    <li>Option 2</li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="dropdown-btn">Sort by: Relevance ▾</button>
+                <ul class="dropdown-menu">
+                    <li>Relevance</li>
+                    <li>Newest</li>
+                    <li>Popular</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="brochure-cards">
+            <div class="card">
+                <div class="badge">🏠 arrfa’s Choice</div>
+                <img src="https://cdn.prod.website-files.com/673daeedc09880db8ca57ef3/674441ca21618f2e9c934740_42.jpg"
+                    alt="Image 1" />
+                <div class="title">Green Building Certification Program</div>
+                <button class="download-btn">Download Brochure</button>
+            </div>
+            <div class="card">
+                <div class="badge">🏠 arrfa’s Choice</div>
+                <img src="https://cdn.prod.website-files.com/673daeedc09880db8ca57ef3/673ef8a8df7332dfe71149ff_11-p-1600.jpg"
+                    alt="Image 2" />
+                <div class="title">Sobha– Al Siniya Island</div>
+                <button class="download-btn">Download Brochure</button>
+            </div>
+            <div class="card">
+                <div class="badge">🏠 arrfa’s Choice</div>
+                <img src="https://cdn.prod.website-files.com/673daeedc09880db8ca57ef3/673ef32145b1c5aa19dbc0bb_2.jpg"
+                    alt="Image 3" />
+                <div class="title">Skyhills Brochure</div>
+                <button class="download-btn">Download Brochure</button>
+            </div>
+        </div>
+        <div class="brochure-cards">
+            <div class="card">
+                <div class="badge">🏠 arrfa’s Choice</div>
+                <img src="https://cdn.prod.website-files.com/673daeedc09880db8ca57ef3/674441ca21618f2e9c934740_42.jpg"
+                    alt="Image 1" />
+                <div class="title">Green Building Certification Program</div>
+                <button class="download-btn">Download Brochure</button>
+            </div>
+            <div class="card">
+                <div class="badge">🏠 arrfa’s Choice</div>
+                <img src="https://cdn.prod.website-files.com/673daeedc09880db8ca57ef3/673ef8a8df7332dfe71149ff_11-p-1600.jpg"
+                    alt="Image 2" />
+                <div class="title">Sobha– Al Siniya Island</div>
+                <button class="download-btn">Download Brochure</button>
+            </div>
+            <div class="card">
+                <div class="badge">🏠 arrfa’s Choice</div>
+                <img src="https://cdn.prod.website-files.com/673daeedc09880db8ca57ef3/673ef32145b1c5aa19dbc0bb_2.jpg"
+                    alt="Image 3" />
+                <div class="title">Skyhills Brochure</div>
+                <button class="download-btn">Download Brochure</button>
+            </div>
+        </div>
+        <div class="brochure-cards">
+            <div class="card">
+                <div class="badge">🏠 arrfa’s Choice</div>
+                <img src="https://cdn.prod.website-files.com/673daeedc09880db8ca57ef3/674441ca21618f2e9c934740_42.jpg"
+                    alt="Image 1" />
+                <div class="title">Green Building Certification Program</div>
+                <button class="download-btn">Download Brochure</button>
+            </div>
+            <div class="card">
+                <div class="badge">🏠 arrfa’s Choice</div>
+                <img src="https://cdn.prod.website-files.com/673daeedc09880db8ca57ef3/673ef8a8df7332dfe71149ff_11-p-1600.jpg"
+                    alt="Image 2" />
+                <div class="title">Sobha– Al Siniya Island</div>
+                <button class="download-btn">Download Brochure</button>
+            </div>
+            <div class="card">
+                <div class="badge">🏠 arrfa’s Choice</div>
+                <img src="https://cdn.prod.website-files.com/673daeedc09880db8ca57ef3/673ef32145b1c5aa19dbc0bb_2.jpg"
+                    alt="Image 3" />
+                <div class="title">Skyhills Brochure</div>
+                <button class="download-btn">Download Brochure</button>
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <footer class="customFooter__section">
+        <div class="customFooter__top">
+            <div class="customFooter__column customFooter__logoCol">
+                <img src="logo.png" alt="Marrfa Logo" class="customFooter__logo" />
+                <p class="customFooter__desc">
+                    Welcome on board with Marrfa, your ultimate platform for cross-border real estate investments!
+                    Marrfa is your go-to hub for discovering, comparing, and investing in global properties, all in one
+                    place. With Marrfa, investing in real estate worldwide has never been easier or more transparent.
+                </p>
+                <div class="customFooter__socialIcons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="customFooter__column">
+                <h4 class="customFooter__title">Quick Access</h4>
+                <ul class="customFooter__list">
+                    <li><a href="#">Explore Projects</a></li>
+                    <li><a href="#">News and Articles</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+
+            <div class="customFooter__column">
+                <h4 class="customFooter__title">Contact Us</h4>
+                <ul class="customFooter__list customFooter__contact">
+                    <li><i class="fas fa-map-marker-alt"></i> 1201, Tower B, Opus by Omniyat, Business Bay, Dubai</li>
+                    <li><i class="fas fa-envelope"></i> sales@marrfa.com</li>
+                    <li><i class="fas fa-phone"></i> +1 (438) 806-6413</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="customFooter__divider" />
+
+        <div class="customFooter__bottom">
+            <ul class="customFooter__bottomLinks">
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Cookies Policy</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </ul>
+            <p class="customFooter__copyright">2024© All right reserved by Marrfa.</p>
+        </div>
+    </footer>
+
+
+
+    <script>
+        const sidebar = document.getElementById("mobileSidebar");
+        const toggleBtn = document.querySelector(".sidebar-toggle-btn");
+
+        // Sidebar toggle button click event
+        toggleBtn.addEventListener("click", (event) => {
+            // Prevent click from propagating to the document
+            event.stopPropagation();
+            sidebar.classList.toggle("open");
+        });
+
+        // Close the sidebar if clicked outside
+        document.addEventListener("click", (event) => {
+            // Check if the click is outside of the sidebar and toggle button
+            if (!sidebar.contains(event.target) && !toggleBtn.contains(event.target)) {
+                sidebar.classList.remove("open");
+            }
+        });
+
+        // Prevent click event on the sidebar from propagating to the document
+        sidebar.addEventListener("click", (event) => {
+            event.stopPropagation();
+        });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
