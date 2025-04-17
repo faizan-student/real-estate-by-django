@@ -1,6 +1,12 @@
 import os
 from pathlib import Path
+from mongoengine import connect
+import ssl
+import certifi
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -54,12 +60,19 @@ TEMPLATES = [
 WSGI_APPLICATION = "real_estate.wsgi.application"
 
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
+
+connect(
+    db="property",
+    host=os.getenv("MONGO_URI"),
+    ssl=True,
+    tlsCAFile=certifi.where(),
+)
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -98,3 +111,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
+AWS_REGION = os.getenv("AWS_REGION")

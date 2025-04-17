@@ -8,4 +8,5 @@ urlpatterns = [
     path("finance/", Finance.as_view()),
     path("about-us/", AboutUs.as_view()),
     path("blogs/", Blogs.as_view()),
+    path("download/<str:project_id>/", download_brochure, name="download_brochure"),
 ]
